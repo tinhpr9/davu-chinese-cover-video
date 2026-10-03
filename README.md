@@ -7,10 +7,10 @@
 ## 📌 Điểm Nổi Bật Của Bản Nâng Cấp FULL
 1. **Thời lượng FULL toàn bài (3 phút 20 giây / 200 giây)**:
    - Bao trọn toàn bộ Verse 1, Pre-Chorus 1, Chorus 1, Điệp khúc Drop Beat 1 bùng nổ, Đoạn độc tấu đàn tranh chuyển đoạn, Verse 2, Pre-Chorus 2, Chorus 2, và Drop Beat 2 cao trào.
-2. **Visual Cổ Trang Mỹ Nữ Ôm Đàn Tỳ Bà Chuẩn Douyin/TikTok**:
-   - Nhân vật thiếu nữ cổ trang thanh tao trong xiêm y lụa trắng viền lông quý phái, đôi tay thon thả nâng cây đàn Tỳ Bà cổ điển.
-   - Bối cảnh đình viện cổ kính lúc đêm trăng với đèn lồng ấm áp, sương mờ thi vị.
-   - Chuyển động cinematic Ken Burns Zoompan từ tốn, mượt mà cuốn hút người xem từ đầu đến cuối.
+2. **Visual Video Chuyển Động Sống Động (True Dynamic Motion Video) Chuẩn Douyin/TikTok**:
+   - Nhân vật thiếu nữ cổ trang cử động sống động, ánh mắt thanh tao, chớp mắt, xiêm y lụa bay trong gió, cảnh gảy đàn Tỳ Bà, đánh đàn Tranh và tuyết rơi lãng mạn.
+   - Hiệu ứng gradient điện ảnh (Cinematic Gradient Overlay) làm nền chuyển đổi mượt mà, tôn bật chữ và che phủ hoàn hảo phụ đề cũ.
+   - Tránh cảm giác ảnh tĩnh nhàm chán, giữ chân người xem xuyên suốt 200 giây.
 3. **Phụ Đề 3 Tầng Đồng Bộ Chuẩn Xác 100%**:
    - Khắc phục triệt để tình trạng lệch nhịp trước đó bằng cách quét OCR đối chiếu từng khung hình video gốc của Cỏ Dại Team.
    - **Tầng 1 (Hán tự)**: Chữ Hán giản thể chuẩn mực, sắc nét (`Noto Sans CJK SC`, 52pt).
@@ -58,17 +58,19 @@
 ```tree
 .
 ├── assets/
+│   ├── cinematic_overlay.png         # Lớp phủ gradient làm mờ điện ảnh và che phụ đề cũ
 │   ├── chinese_beauty_pipa.jpg       # Artwork mỹ nhân cổ trang ôm đàn Tỳ Bà (1080x1920)
 │   ├── davu_chinese_original.mp3     # Bản thu gốc hoàn chỉnh 3m20s (Hoàng Linh)
 │   └── background_base.jpg           # Background cảnh đêm trừu tượng
 ├── output/
 │   ├── davu_full_subtitles.ass       # Phụ đề 3 tầng bản Full 200s
-│   ├── DaVu_Chinese_Version_FULL_Master.mp4 # Video FULL 3m20s hoàn thiện
+│   ├── DaVu_Chinese_Version_FULL_Master.mp4 # Video FULL 3m20s chuyển động hoàn thiện
 │   ├── davu_3layer_subtitles.ass     # Phụ đề bản trích đoạn ngắn 56s
 │   └── DaVu_Chinese_Version_Master.mp4 # Video ngắn 56s
 ├── scripts/
 │   ├── extract_all_lyrics.py         # Trích xuất và đối chiếu OCR khung hình
 │   ├── generate_full_subtitles.py    # Xuất phụ đề 3 tầng bản Full
+│   ├── render_full_motion_video.py   # Render video chuyển động sống động Full 3m20s
 │   ├── render_full_video.py          # Render toàn bộ video Full 3m20s
 │   ├── generate_subtitles.py         # Phụ đề bản ngắn
 │   └── render_video.py               # Render video ngắn
@@ -88,8 +90,8 @@
 # 1. Sinh phụ đề Full 3 tầng
 python3 scripts/generate_full_subtitles.py
 
-# 2. Render video Full 3m20s
-python3 scripts/render_full_video.py
+# 2. Render video chuyển động sống động Full 3m20s
+python3 scripts/render_full_motion_video.py
 
 # 3. Chạy toàn bộ kiểm thử
 python3 -m unittest discover tests/

@@ -56,5 +56,33 @@ class TestFullVideo(unittest.TestCase):
 
         self.assertEqual(a_stream["codec_name"], "aac")
 
+    def test_full_motion_video_properties(self):
+        motion_file = "output/DaVu_Chinese_Version_FULL_Motion_Master.mp4"
+        if not os.path.exists(motion_file):
+            self.skipTest(f"{motion_file} not rendered yet")
+
+        cmd = [
+            "ffprobe", "-v", "quiet",
+            "-print_format", "json",
+            "-show_format",
+            "-show_streams",
+            motion_file
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0)
+        data = json.loads(result.stdout)
+
+        duration = float(data["format"]["duration"])
+        self.assertAlmostEqual(duration, 200.0, delta=2.0)
+
+        v_stream = next(s for s in data["streams"] if s["codec_type"] == "video")
+        a_stream = next(s for s in data["streams"] if s["codec_type"] == "audio")
+
+        self.assertEqual(v_stream["width"], 1080)
+        self.assertEqual(v_stream["height"], 1920)
+        self.assertEqual(v_stream["codec_name"], "h264")
+        self.assertEqual(v_stream["pix_fmt"], "yuv420p")
+        self.assertEqual(a_stream["codec_name"], "aac")
+
 if __name__ == "__main__":
     unittest.main()

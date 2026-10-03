@@ -3,3 +3,15 @@ __pycache__/
 *$py.class
 .pytest_cache/
 .DS_Store
+*.jpg
+output/check_*.jpg
+output/test_*.jpg
+output/raw_*.jpg
+output/ref_*.jpg
+output/sample_frames/
+assets/scene_*.jpg
+assets/motion_*.jpg
+assets/thumb_*.jpg
+assets/sample_*.mp4
+assets/ref_*.mp4
+output/DaVu_Chinese_Version_FULL_Motion_Master.mp4
