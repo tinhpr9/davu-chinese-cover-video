@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+"""
+Generate complete 3-layer ASS subtitles for the FULL song Dạ Vũ (夜舞 - Chinese Version)
+Duration: 200.08s (Full Song)
+Layers:
+1. Hanzi (Chinese Simplified) - Large, clean white with glowing outline
+2. Pinyin (with tones) - Golden accent, italic
+3. Vietsub (Vietnamese translation) - Soft luminous cyan/white
+"""
+import os
+
+FULL_ASS_TEMPLATE = """[Script Info]
+Title: Da Vu (Chinese Version) - Full Song Subtitles
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: HeaderTitle,Noto Sans CJK SC,42,&H00FFFFFF&,&H000000FF&,&H00120524&,&H80000000&,-1,0,0,0,100,100,2,0,1,3.0,2.0,8,60,60,190,1
+Style: HeaderArtist,Noto Sans CJK SC,26,&H0066D1FF&,&H000000FF&,&H00120524&,&H80000000&,0,0,0,0,100,100,1,0,1,2.0,1.5,8,60,60,250,1
+Style: Hanzi,Noto Sans CJK SC,52,&H00FFFFFF&,&H000000FF&,&H00100828&,&H90000000&,-1,0,0,0,100,100,2,0,1,3.5,2.5,2,60,60,480,1
+Style: Pinyin,DejaVu Sans,30,&H005CD6FF&,&H000000FF&,&H00100828&,&H90000000&,0,-1,0,0,100,100,1,0,1,2.5,2.0,2,60,60,420,1
+Style: Vietsub,DejaVu Sans,35,&H00FFF5EA&,&H000000FF&,&H00100828&,&H90000000&,-1,0,0,0,100,100,1,0,1,3.0,2.5,2,60,60,355,1
+Style: DropHighlight,DejaVu Sans,32,&H0080FF80&,&H000000FF&,&H00100828&,&H90000000&,-1,0,0,0,100,100,2,0,1,2.5,2.0,2,60,60,290,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+; Header branding throughout full video
+Dialogue: 0,0:00:00.00,0:03:20.08,HeaderTitle,,0,0,190,,{\\fad(600,600)}DẠ VŨ (夜舞) | CHINESE VERSION
+Dialogue: 0,0:00:00.00,0:03:20.08,HeaderArtist,,0,0,250,,{\\fad(600,600)}Tăng Duy Tân × Hoàng Linh (黄龄)
+
+; Intro instrumental (0 - 23.00s)
+Dialogue: 1,0:00:01.00,0:00:22.50,Pinyin,,0,0,420,,{\\fad(600,600)}♫ [Khúc dạo đầu Đàn tranh & Sáo trúc / Intro Guzheng] ♫
+
+; Verse 1 (23.00s - 45.50s)
+Dialogue: 2,0:00:23.00,0:00:27.00,Hanzi,,0,0,480,,{\\fad(250,250)}恰好照在夜风微凉的晚上
+Dialogue: 2,0:00:23.00,0:00:27.00,Pinyin,,0,0,420,,{\\fad(250,250)}Qiàhǎo zhào zài yè fēng wēiliáng de wǎnshàng
+Dialogue: 2,0:00:23.00,0:00:27.00,Vietsub,,0,0,355,,{\\fad(250,250)}Vừa lúc chiếu vào cơn gió lạnh buổi đêm
+
+Dialogue: 2,0:00:27.00,0:00:31.50,Hanzi,,0,0,480,,{\\fad(250,250)}树影灯影都随月影在摇晃
+Dialogue: 2,0:00:27.00,0:00:31.50,Pinyin,,0,0,420,,{\\fad(250,250)}Shù yǐng dēngyǐng dōu suí yuèyǐng zài yáohuàng
+Dialogue: 2,0:00:27.00,0:00:31.50,Vietsub,,0,0,355,,{\\fad(250,250)}Bóng cây ánh đèn cũng đung đưa theo ánh trăng
+
+Dialogue: 2,0:00:31.50,0:00:36.50,Hanzi,,0,0,480,,{\\fad(250,250)}晃得心中所想无处去隐藏
+Dialogue: 2,0:00:31.50,0:00:36.50,Pinyin,,0,0,420,,{\\fad(250,250)}Huàng dé xīnzhōng suǒ xiǎng wú chù qù yǐncáng
+Dialogue: 2,0:00:31.50,0:00:36.50,Vietsub,,0,0,355,,{\\fad(250,250)}Khiến tâm sự trong lòng chẳng nơi giấu kín
+
+Dialogue: 2,0:00:36.50,0:00:41.00,Hanzi,,0,0,480,,{\\fad(250,250)}勾勒出被遗忘的念念不忘
+Dialogue: 2,0:00:36.50,0:00:41.00,Pinyin,,0,0,420,,{\\fad(250,250)}Gōulè chū bèi yíwàng de niànniànbùwàng
+Dialogue: 2,0:00:36.50,0:00:41.00,Vietsub,,0,0,355,,{\\fad(250,250)}Phác họa lại những vương vấn ngỡ đã lãng quên
+
+Dialogue: 2,0:00:41.00,0:00:45.50,Hanzi,,0,0,480,,{\\fad(250,250)}回想起已寻常的极不寻常
+Dialogue: 2,0:00:41.00,0:00:45.50,Pinyin,,0,0,420,,{\\fad(250,250)}Huíxiǎng qǐ yǐ xúncháng de jí bù xúncháng
+Dialogue: 2,0:00:41.00,0:00:45.50,Vietsub,,0,0,355,,{\\fad(250,250)}Hồi tưởng lại những thứ tầm thường nay lại chẳng tầm thường
+
+; Pre-Chorus 1 (45.50s - 01:13.00s)
+Dialogue: 2,0:00:45.50,0:00:49.50,Hanzi,,0,0,480,,{\\fad(250,250)}冰凉的是否还能变得滚烫
+Dialogue: 2,0:00:45.50,0:00:49.50,Pinyin,,0,0,420,,{\\fad(250,250)}Bīngliáng de shìfǒu hái néng biàn dé gǔntàng
+Dialogue: 2,0:00:45.50,0:00:49.50,Vietsub,,0,0,355,,{\\fad(250,250)}Lạnh lẽo liệu chăng có thể trở lại nóng bỏng?
+
+Dialogue: 2,0:00:49.50,0:00:53.50,Hanzi,,0,0,480,,{\\fad(250,250)}心中某个地方 也曾照进一道光
+Dialogue: 2,0:00:49.50,0:00:53.50,Pinyin,,0,0,420,,{\\fad(250,250)}Xīnzhōng mǒugè dìfāng, yě céng zhào jìn yīdào guāng
+Dialogue: 2,0:00:49.50,0:00:53.50,Vietsub,,0,0,355,,{\\fad(250,250)}Đâu đó trong tim cũng từng được ánh sáng soi rọi
+
+Dialogue: 2,0:00:53.50,0:00:57.50,Hanzi,,0,0,480,,{\\fad(250,250)}谁翻云覆雨冷不防
+Dialogue: 2,0:00:53.50,0:00:57.50,Pinyin,,0,0,420,,{\\fad(250,250)}Shéi fānyúnfùyǔ lěngbùfáng
+Dialogue: 2,0:00:53.50,0:00:57.50,Vietsub,,0,0,355,,{\\fad(250,250)}Là ai bất chợt tạo nên phong ba khôn lường
+
+Dialogue: 2,0:00:57.50,0:01:03.00,Hanzi,,0,0,480,,{\\fad(250,250)}卷起时光 再轻放下
+Dialogue: 2,0:00:57.50,0:01:03.00,Pinyin,,0,0,420,,{\\fad(250,250)}Juǎn qǐ shíguāng zài qīng fàngxià
+Dialogue: 2,0:00:57.50,0:01:03.00,Vietsub,,0,0,355,,{\\fad(250,250)}Cuộn thời gian lên rồi nhẹ nhàng buông xuống
+
+Dialogue: 2,0:01:03.00,0:01:05.50,Hanzi,,0,0,480,,{\\fad(250,250)}我不由自主去回望
+Dialogue: 2,0:01:03.00,0:01:05.50,Pinyin,,0,0,420,,{\\fad(250,250)}Wǒ bùyóuzìzhǔ qù huíwàng
+Dialogue: 2,0:01:03.00,0:01:05.50,Vietsub,,0,0,355,,{\\fad(250,250)}Em không kìm được lại ngoảnh đầu nhìn lại
+
+Dialogue: 2,0:01:05.50,0:01:13.00,Hanzi,,0,0,480,,{\\fad(250,250)}那些时光 都太漫长 终难忘
+Dialogue: 2,0:01:05.50,0:01:13.00,Pinyin,,0,0,420,,{\\fad(250,250)}Nàxiē shíguāng dōu tài màncháng, zhōng nánwàng
+Dialogue: 2,0:01:05.50,0:01:13.00,Vietsub,,0,0,355,,{\\fad(250,250)}Những tháng ngày ấy quá đỗi dài lâu, rốt cuộc khó lòng quên
+
+; Chorus 1 & Drop Beat 1 (01:13.00s - 01:38.00s)
+Dialogue: 2,0:01:13.00,0:01:21.00,Hanzi,,0,0,480,,{\\fad(300,500)}随风起舞 叹这长夜
+Dialogue: 2,0:01:13.00,0:01:21.00,Pinyin,,0,0,420,,{\\fad(300,500)}Suí fēng qǐ wǔ, tàn zhè cháng yè
+Dialogue: 2,0:01:13.00,0:01:21.00,Vietsub,,0,0,355,,{\\fad(300,500)}Vũ điệu cùng gió, thở than giữa đêm trường...
+Dialogue: 2,0:01:15.50,0:01:38.00,DropHighlight,,0,0,290,,{\\fad(400,600)}⚡ [SIÊU PHẨM DROP BEAT 1 - SÁO TRÚC & ĐÀN TRANH] ⚡
+
+; Interlude (01:38.00s - 01:49.00s)
+Dialogue: 1,0:01:38.00,0:01:48.50,Pinyin,,0,0,420,,{\\fad(400,400)}♫ [Độc tấu đàn tranh Dạ Vũ / Guzheng Solo Interlude] ♫
+
+; Verse 2 (01:49.00s - 02:14.00s)
+Dialogue: 2,0:01:49.00,0:01:54.00,Hanzi,,0,0,480,,{\\fad(250,250)}都怪我还想 沉溺于你的假象
+Dialogue: 2,0:01:49.00,0:01:54.00,Pinyin,,0,0,420,,{\\fad(250,250)}Dōu guài wǒ hái xiǎng, chénnì yú nǐ de jiǎxiàng
+Dialogue: 2,0:01:49.00,0:01:54.00,Vietsub,,0,0,355,,{\\fad(250,250)}Đều tại em vẫn mơ tưởng, chìm đắm trong ảo ảnh của người
+
+Dialogue: 2,0:01:54.00,0:02:00.00,Hanzi,,0,0,480,,{\\fad(250,250)}就让回忆随时间流淌 可前路悠长
+Dialogue: 2,0:01:54.00,0:02:00.00,Pinyin,,0,0,420,,{\\fad(250,250)}Jiù ràng huíyì suí shíjiān liútǎng, kě qián lù yōucháng
+Dialogue: 2,0:01:54.00,0:02:00.00,Vietsub,,0,0,355,,{\\fad(250,250)}Cứ để hồi ức trôi theo năm tháng, dẫu chặng đường phía trước xa xôi
+
+Dialogue: 2,0:02:00.00,0:02:05.00,Hanzi,,0,0,480,,{\\fad(250,250)}到处都是过往的形状
+Dialogue: 2,0:02:00.00,0:02:05.00,Pinyin,,0,0,420,,{\\fad(250,250)}Dàochù dōu shì guòwǎng de xíngzhuàng
+Dialogue: 2,0:02:00.00,0:02:05.00,Vietsub,,0,0,355,,{\\fad(250,250)}Nơi nơi đều ngập tràn hình bóng của quá khứ
+
+Dialogue: 2,0:02:05.00,0:02:09.50,Hanzi,,0,0,480,,{\\fad(250,250)}勾勒出被遗忘的念念不忘
+Dialogue: 2,0:02:05.00,0:02:09.50,Pinyin,,0,0,420,,{\\fad(250,250)}Gōulè chū bèi yíwàng de niànniànbùwàng
+Dialogue: 2,0:02:05.00,0:02:09.50,Vietsub,,0,0,355,,{\\fad(250,250)}Phác họa lại những vương vấn ngỡ đã lãng quên
+
+Dialogue: 2,0:02:09.50,0:02:14.00,Hanzi,,0,0,480,,{\\fad(250,250)}回想起已寻常的极不寻常
+Dialogue: 2,0:02:09.50,0:02:14.00,Pinyin,,0,0,420,,{\\fad(250,250)}Huíxiǎng qǐ yǐ xúncháng de jí bù xúncháng
+Dialogue: 2,0:02:09.50,0:02:14.00,Vietsub,,0,0,355,,{\\fad(250,250)}Hồi tưởng lại những thứ tầm thường nay lại chẳng tầm thường
+
+; Pre-Chorus 2 (02:14.00s - 02:42.00s)
+Dialogue: 2,0:02:14.00,0:02:17.50,Hanzi,,0,0,480,,{\\fad(250,250)}冰凉的是否还能变得滚烫
+Dialogue: 2,0:02:14.00,0:02:17.50,Pinyin,,0,0,420,,{\\fad(250,250)}Bīngliáng de shìfǒu hái néng biàn dé gǔntàng
+Dialogue: 2,0:02:14.00,0:02:17.50,Vietsub,,0,0,355,,{\\fad(250,250)}Lạnh lẽo liệu chăng có thể trở lại nóng bỏng?
+
+Dialogue: 2,0:02:17.50,0:02:22.00,Hanzi,,0,0,480,,{\\fad(250,250)}心中某个地方 也曾照进一道光
+Dialogue: 2,0:02:17.50,0:02:22.00,Pinyin,,0,0,420,,{\\fad(250,250)}Xīnzhōng mǒugè dìfāng, yě céng zhào jìn yīdào guāng
+Dialogue: 2,0:02:17.50,0:02:22.00,Vietsub,,0,0,355,,{\\fad(250,250)}Đâu đó trong tim cũng từng được ánh sáng soi rọi
+
+Dialogue: 2,0:02:22.00,0:02:26.00,Hanzi,,0,0,480,,{\\fad(250,250)}谁翻云覆雨冷不防
+Dialogue: 2,0:02:22.00,0:02:26.00,Pinyin,,0,0,420,,{\\fad(250,250)}Shéi fānyúnfùyǔ lěngbùfáng
+Dialogue: 2,0:02:22.00,0:02:26.00,Vietsub,,0,0,355,,{\\fad(250,250)}Là ai bất chợt tạo nên phong ba khôn lường
+
+Dialogue: 2,0:02:26.00,0:02:31.00,Hanzi,,0,0,480,,{\\fad(250,250)}卷起时光 再轻放下
+Dialogue: 2,0:02:26.00,0:02:31.00,Pinyin,,0,0,420,,{\\fad(250,250)}Juǎn qǐ shíguāng zài qīng fàngxià
+Dialogue: 2,0:02:26.00,0:02:31.00,Vietsub,,0,0,355,,{\\fad(250,250)}Cuộn thời gian lên rồi nhẹ nhàng buông xuống
+
+Dialogue: 2,0:02:31.00,0:02:34.50,Hanzi,,0,0,480,,{\\fad(250,250)}我不由自主去回望
+Dialogue: 2,0:02:31.00,0:02:34.50,Pinyin,,0,0,420,,{\\fad(250,250)}Wǒ bùyóuzìzhǔ qù huíwàng
+Dialogue: 2,0:02:31.00,0:02:34.50,Vietsub,,0,0,355,,{\\fad(250,250)}Em không kìm được lại ngoảnh đầu nhìn lại
+
+Dialogue: 2,0:02:34.50,0:02:42.00,Hanzi,,0,0,480,,{\\fad(250,250)}那些时光 都太漫长 终难忘
+Dialogue: 2,0:02:34.50,0:02:42.00,Pinyin,,0,0,420,,{\\fad(250,250)}Nàxiē shíguāng dōu tài màncháng, zhōng nánwàng
+Dialogue: 2,0:02:34.50,0:02:42.00,Vietsub,,0,0,355,,{\\fad(250,250)}Những tháng ngày ấy quá đỗi dài lâu, rốt cuộc khó lòng quên
+
+; Chorus 2 & Drop Beat 2 (02:42.00s - 03:12.00s)
+Dialogue: 2,0:02:42.00,0:02:50.00,Hanzi,,0,0,480,,{\\fad(300,500)}随风起舞 叹这长夜
+Dialogue: 2,0:02:42.00,0:02:50.00,Pinyin,,0,0,420,,{\\fad(300,500)}Suí fēng qǐ wǔ, tàn zhè cháng yè
+Dialogue: 2,0:02:42.00,0:02:50.00,Vietsub,,0,0,355,,{\\fad(300,500)}Vũ điệu cùng gió, thở than giữa đêm trường...
+Dialogue: 2,0:02:44.50,0:03:12.00,DropHighlight,,0,0,290,,{\\fad(400,600)}⚡ [SIÊU PHẨM DROP BEAT 2 - CAO TRÀO BÙNG NỔ CỰC ĐẠI] ⚡
+
+; Outro (03:12.00s - 03:20.08s)
+Dialogue: 1,0:03:12.00,0:03:19.50,Pinyin,,0,0,420,,{\\fad(400,600)}♫ [Dư âm đêm Dạ Vũ / Outro Fade] ♫
+"""
+
+def generate_full_subtitles(output_path="output/davu_full_subtitles.ass"):
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(FULL_ASS_TEMPLATE)
+    print(f"Generated full subtitles at: {output_path}")
+    return output_path
+
+if __name__ == "__main__":
+    generate_full_subtitles()
