@@ -1,0 +1,57 @@
+[Script Info]
+Title: Da Vu - Chinese Version Cover
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+PlayResX: 1080
+PlayResY: 1920
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: HeaderTitle,Noto Sans CJK SC,42,&H00FFFFFF&,&H000000FF&,&H00120524&,&H80000000&,-1,0,0,0,100,100,2,0,1,3.0,2.0,8,60,60,220,1
+Style: HeaderArtist,Noto Sans CJK SC,28,&H0066D1FF&,&H000000FF&,&H00120524&,&H80000000&,0,0,0,0,100,100,1,0,1,2.0,1.5,8,60,60,290,1
+Style: Hanzi,Noto Sans CJK SC,56,&H00FFFFFF&,&H000000FF&,&H00100828&,&H90000000&,-1,0,0,0,100,100,3,0,1,3.5,3.0,2,60,60,530,1
+Style: Pinyin,DejaVu Sans,32,&H005CD6FF&,&H000000FF&,&H00100828&,&H90000000&,0,-1,0,0,100,100,1,0,1,2.5,2.0,2,60,60,465,1
+Style: Vietsub,DejaVu Sans,38,&H00FFF5EA&,&H000000FF&,&H00100828&,&H90000000&,-1,0,0,0,100,100,1,0,1,3.0,2.5,2,60,60,395,1
+Style: DropHighlight,DejaVu Sans,34,&H0080FF80&,&H000000FF&,&H00100828&,&H90000000&,-1,0,0,0,100,100,2,0,1,2.5,2.0,2,60,60,325,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+; Header overlays throughout the video
+Dialogue: 0,0:00:00.00,0:00:56.00,HeaderTitle,,0,0,220,,{\fad(600,600)}DẠ VŨ (夜舞)
+Dialogue: 0,0:00:00.00,0:00:56.00,HeaderArtist,,0,0,285,,{\fad(600,600)}Tăng Duy Tân × Hoàng Linh (黄龄) | Chinese Cover
+
+; Intro badge (0 - 3.5s)
+Dialogue: 1,0:00:00.80,0:00:03.40,Pinyin,,0,0,460,,{\fad(400,300)}♫ [Giai điệu mở đầu / Intro Guzheng Beat] ♫
+
+; Lyric 1: 03.50s - 10.50s
+Dialogue: 2,0:00:03.50,0:00:10.50,Hanzi,,0,0,530,,{\fad(250,250)}树影灯影底随月影在摇晃
+Dialogue: 2,0:00:03.50,0:00:10.50,Pinyin,,0,0,465,,{\fad(250,250)}Shù yǐng dēng yǐng dǐ suí yuè yǐng zài yáo huàng
+Dialogue: 2,0:00:03.50,0:00:10.50,Vietsub,,0,0,395,,{\fad(250,250)}Bóng cây ánh đèn cùng đung đưa theo ánh trăng
+
+; Lyric 2: 10.50s - 18.00s
+Dialogue: 2,0:00:10.50,0:00:18.00,Hanzi,,0,0,530,,{\fad(250,250)}慌的心中所想无处去隐藏
+Dialogue: 2,0:00:10.50,0:00:18.00,Pinyin,,0,0,465,,{\fad(250,250)}Huāng de xīn zhōng suǒ xiǎng wú chù qù yǐn cáng
+Dialogue: 2,0:00:10.50,0:00:18.00,Vietsub,,0,0,395,,{\fad(250,250)}Những ý nghĩ hoang mang trong lòng chẳng nơi giấu kín
+
+; Lyric 3: 18.00s - 26.00s
+Dialogue: 2,0:00:18.00,0:00:26.00,Hanzi,,0,0,530,,{\fad(250,250)}勾勒出被遗忘的念念不忘
+Dialogue: 2,0:00:18.00,0:00:26.00,Pinyin,,0,0,465,,{\fad(250,250)}Gōu lè chū bèi yí wàng de niàn niàn bù wàng
+Dialogue: 2,0:00:18.00,0:00:26.00,Vietsub,,0,0,395,,{\fad(250,250)}Họa lại những vương vấn tưởng chừng đã lãng quên
+
+; Lyric 4: 26.00s - 34.00s
+Dialogue: 2,0:00:26.00,0:00:34.00,Hanzi,,0,0,530,,{\fad(250,250)}冰凉的是否还能变滚烫
+Dialogue: 2,0:00:26.00,0:00:34.00,Pinyin,,0,0,465,,{\fad(250,250)}Bīng liáng de shì fǒu hái néng biàn gǔn tàng
+Dialogue: 2,0:00:26.00,0:00:34.00,Vietsub,,0,0,395,,{\fad(250,250)}Liệu lạnh giá này có thể trở lại nồng say?
+
+; Lyric 5: 34.00s - 42.00s
+Dialogue: 2,0:00:34.00,0:00:42.00,Hanzi,,0,0,530,,{\fad(250,250)}谁翻云覆雨冷不防
+Dialogue: 2,0:00:34.00,0:00:42.00,Pinyin,,0,0,465,,{\fad(250,250)}Shéi fān yún fù yǔ lěng bù fáng
+Dialogue: 2,0:00:34.00,0:00:42.00,Vietsub,,0,0,395,,{\fad(250,250)}Ai bất chợt tạo nên phong ba khôn lường...
+
+; Lyric 6 & Drop Beat: 42.00s - 55.50s
+Dialogue: 2,0:00:42.00,0:00:55.50,Hanzi,,0,0,530,,{\fad(300,600)}随风起舞 叹这长夜
+Dialogue: 2,0:00:42.00,0:00:55.50,Pinyin,,0,0,465,,{\fad(300,600)}Suí fēng qǐ wǔ, tàn zhè cháng yè
+Dialogue: 2,0:00:42.00,0:00:55.50,Vietsub,,0,0,395,,{\fad(300,600)}Vũ điệu cùng gió, thở than giữa đêm trường...
+Dialogue: 2,0:00:44.50,0:00:55.50,DropHighlight,,0,0,325,,{\fad(400,600)}⚡ [SIÊU PHẨM DROP BEAT - SÁO TRÚC & ĐÀN TRANH] ⚡
