@@ -3,15 +3,20 @@ __pycache__/
 *$py.class
 .pytest_cache/
 .DS_Store
-*.jpg
-output/check_*.jpg
-output/test_*.jpg
-output/raw_*.jpg
-output/ref_*.jpg
+
+# Temporary frames and tests
+output/*.jpg
 output/sample_frames/
+output/original_frames/
+output/verified_scenes/
+output/segments/
 assets/scene_*.jpg
 assets/motion_*.jpg
 assets/thumb_*.jpg
 assets/sample_*.mp4
 assets/ref_*.mp4
+assets/particles_*.mp4
 output/DaVu_Chinese_Version_FULL_Motion_Master.mp4
+
+# Track core original artwork
+!assets/chinese_beauty_*.jpg

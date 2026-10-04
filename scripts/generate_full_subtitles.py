@@ -25,7 +25,6 @@ Style: HeaderArtist,Noto Sans CJK SC,26,&H0066D1FF&,&H000000FF&,&H00120524&,&H80
 Style: Hanzi,Noto Sans CJK SC,52,&H00FFFFFF&,&H000000FF&,&H00100828&,&H90000000&,-1,0,0,0,100,100,2,0,1,3.5,2.5,2,60,60,480,1
 Style: Pinyin,DejaVu Sans,30,&H005CD6FF&,&H000000FF&,&H00100828&,&H90000000&,0,-1,0,0,100,100,1,0,1,2.5,2.0,2,60,60,420,1
 Style: Vietsub,DejaVu Sans,35,&H00FFF5EA&,&H000000FF&,&H00100828&,&H90000000&,-1,0,0,0,100,100,1,0,1,3.0,2.5,2,60,60,355,1
-Style: DropHighlight,DejaVu Sans,32,&H0080FF80&,&H000000FF&,&H00100828&,&H90000000&,-1,0,0,0,100,100,2,0,1,2.5,2.0,2,60,60,290,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -86,7 +85,6 @@ Dialogue: 2,0:01:05.50,0:01:13.00,Vietsub,,0,0,355,,{\\fad(250,250)}Những thá
 Dialogue: 2,0:01:13.00,0:01:21.00,Hanzi,,0,0,480,,{\\fad(300,500)}随风起舞 叹这长夜
 Dialogue: 2,0:01:13.00,0:01:21.00,Pinyin,,0,0,420,,{\\fad(300,500)}Suí fēng qǐ wǔ, tàn zhè cháng yè
 Dialogue: 2,0:01:13.00,0:01:21.00,Vietsub,,0,0,355,,{\\fad(300,500)}Vũ điệu cùng gió, thở than giữa đêm trường...
-Dialogue: 2,0:01:15.50,0:01:38.00,DropHighlight,,0,0,290,,{\\fad(400,600)}⚡ [SIÊU PHẨM DROP BEAT 1 - SÁO TRÚC & ĐÀN TRANH] ⚡
 
 ; Interlude (01:38.00s - 01:49.00s)
 Dialogue: 1,0:01:38.00,0:01:48.50,Pinyin,,0,0,420,,{\\fad(400,400)}♫ [Độc tấu đàn tranh Dạ Vũ / Guzheng Solo Interlude] ♫
@@ -141,7 +139,6 @@ Dialogue: 2,0:02:34.50,0:02:42.00,Vietsub,,0,0,355,,{\\fad(250,250)}Những thá
 Dialogue: 2,0:02:42.00,0:02:50.00,Hanzi,,0,0,480,,{\\fad(300,500)}随风起舞 叹这长夜
 Dialogue: 2,0:02:42.00,0:02:50.00,Pinyin,,0,0,420,,{\\fad(300,500)}Suí fēng qǐ wǔ, tàn zhè cháng yè
 Dialogue: 2,0:02:42.00,0:02:50.00,Vietsub,,0,0,355,,{\\fad(300,500)}Vũ điệu cùng gió, thở than giữa đêm trường...
-Dialogue: 2,0:02:44.50,0:03:12.00,DropHighlight,,0,0,290,,{\\fad(400,600)}⚡ [SIÊU PHẨM DROP BEAT 2 - CAO TRÀO BÙNG NỔ CỰC ĐẠI] ⚡
 
 ; Outro (03:12.00s - 03:20.08s)
 Dialogue: 1,0:03:12.00,0:03:19.50,Pinyin,,0,0,420,,{\\fad(400,600)}♫ [Dư âm đêm Dạ Vũ / Outro Fade] ♫
